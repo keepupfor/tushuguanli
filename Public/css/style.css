@@ -9,6 +9,7 @@ a{color:grey;}
 .h-p{
     z-index: 8; height:14.23vw; color: #ffffff;position:fixed;top:0;transition: background 1s;background-image:linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(100,100,100,0));
 }
+.clearfix{clear: both;}
 .scrolledDown{
     background: rgba(95, 196, 229, 1);
     color: #ddd;
@@ -36,7 +37,7 @@ a{color:grey;}
 .book_list ul li{ background: white;   margin: 5px 2vw; height: 25vh;  width: 96vw;}
 .book_list ul li img{width: 100%;}
 .book_left{height:21vh;margin-top:2vh;float:left;width: 25vw;padding-left:2vw }
-.book_right{height:21vh;margin-top:2vh;float: right;width: 60vw;padding: 0 2vw;overflow: hidden}
+.book_right{ line-height: 4vh;height:21vh;margin-top:2vh;float: right;width: 60vw;padding: 0 2vw;overflow: hidden}
 .book_right span{display: block;}
 .footer ul a:first-child{
     color:#5fb0e5;
@@ -71,6 +72,25 @@ a{color:grey;}
 .footer-pic img{
     width:100%;
 }
+.header{z-index:100;position: fixed; width:100%; height:45px; margin:0 auto; padding:0px; display:table; background: -webkit-gradient(linear, 100% 100%, 0% 100%,from(rgb(95,196,229)), to(rgb(95,196,229))); color:#FFF; line-height:50px;}
+.header_back:before {content: '';display: block;width:15px;height:15px;border-left:2px solid #ffffff;border-top: 2px solid #ffffff;margin: 14px 0 0 14px;-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg); margin-top:20px}
+.left_t{width:25%;float:left;}
+.left_t img{width:50px; height:40px; float:left; margin-left:10px; margin-top:10px;}
+.left_t span{ font-size:12px; line-height:35px; margin-left:5px;}
+.middle_t{width:50%;text-align:center;float:left; font-size:18px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.right_t{width:25%;float:right;}
+.right_t a{ color:#FFFFFF; text-decoration:none; margin-right:10px; font-size:16px;}
+
+.content{position: absolute;}
+.content_top{ width: 95vw;  margin: 56px 2.5vw 3vh 2.5vw;  position: relative;  background-color: white;  height: 23vh;}
+.content_top img{height: 100%}
+.content_description{width: 95vw;margin: 0 auto 45px auto}
+.content_description dl dt{padding:1vh 0 1vh 5vw;border-left:2px solid orange ;background: #ccc}
+.content_description dl dd{background:white;margin: 1vh 2vw;height: 200px;overflow: hidden;}
+.content_description dl p{text-indent: 2em; text-overflow: ellipsis;word-break:break-all}
+.content_description dl a{    display: block;  width: 91vw;  background: white;  margin: -1vh auto 0 auto;}
+.content_bottom{position: fixed;  bottom: 0;  width: 100vw;  height: 43px;  border-top: 1px solid grey;  background: white;}
 .full-classification{
     margin:15vw 0 0 5vw;width:90vw;height:45vw;
 }

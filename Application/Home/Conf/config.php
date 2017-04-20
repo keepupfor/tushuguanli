@@ -4,7 +4,7 @@ return array(
     /* 数据库设置 */
     'DB_TYPE'               => 'mysql',     // 数据库类型
     'DB_HOST'               => 'localhost', // 服务器地址
-    'DB_NAME'               => 'school39',          // 数据库名
+    'DB_NAME'               => 'book',          // 数据库名
     'DB_USER'               => 'root',      // 用户名
     'DB_PWD'                => 'root',          // 密码
     'DB_PORT'               => '3306',        // 端口
@@ -26,37 +26,10 @@ return array(
     'LOG_LEVEL'             =>  'EMERG,ALERT,CRIT,ERR,INFO',// 允许记录的日志级别
     'LOG_EXCEPTION_RECORD'  =>  true,    // 是否记录异常信息日志
 
-    'MODULE_ALLOW_LIST'    =>    array('Weixin'),
-    'DEFAULT_MODULE'       =>    'Weixin',  // 默认模块
+//    'MODULE_ALLOW_LIST'    =>    array('Weixin'),
+    'DEFAULT_MODULE'       =>   'Home',  // 默认模块
     'DEFAULT_CONTROLLER'    =>  'Index', // 默认控制器名称
     'DEFAULT_ACTION'        =>  'index', // 默认操作名称
-//	'WEB_SITE_URL'=>'http://wx.360xuet.com',//网站配置地址
     'LOAD_EXT_FILE' =>'extfunction',
-
-
-    //支付宝配置参数
-    'alipay'=>array(
-        'partner'=>'2088221257097452',//合作身份者id，以2088开头的16位纯数字
-        'seller_id'=>'2088221257097452',//收款支付宝账号
-        'key'=>'mch5r0gwsjxus6z0hh3nzldh3esw5md8',//安全检验码，以数字和字母组成的32位字符
-        'sign_type'=>strtoupper('MD5'),//签名方式 不需修改
-        'input_charset'=>strtolower('utf-8'),//字符编码格式 目前支持 gbk 或 utf-8
-        'cacert'=>getcwd().'\\cacert.pem',//ca证书路径地址，用于curl中ssl校验,请保证cacert.pem文件在当前文件夹目录中
-        'transport'=>'http',//访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
-    ),
-    //以上配置项，是从接口包中alipay.config.php 文件中复制过来，进行配置；
-
-//    'alipay'   =>array(
-//        //这里是卖家的支付宝账号，也就是你申请接口时注册的支付宝账号
-//        'seller_email'=>'pay@xxx.com',
-//        //这里是异步通知页面url，提交到项目的Pay控制器的notifyurl方法；
-//        'notify_url'=>'/Pay/index/notifyurl',
-//        //这里是页面跳转通知url，提交到项目的Pay控制器的returnurl方法；
-//        'return_url'=>'/Pay/index/returnurl',
-//        //支付成功跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参payed（已支付列表）
-//        'successpage'=>'User/myorder?ordtype=payed',
-//        //支付失败跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参unpay（未支付列表）
-//        'errorpage'=>'User/myorder?ordtype=unpay',
-//    ),
 
 );
