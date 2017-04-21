@@ -1,0 +1,104 @@
+<include file="Public:script-load-page"/>
+<title>365首页</title>
+<body ontouchstart>
+<div class="top">
+    <div class="h-p">
+        <div class="left-t">
+            <div class="right-t-div">
+                <span class="right-t-l">
+                    <img src="http://wx.365xuet.com/Public/Weixin/images/search-icon.png"/>
+                </span>
+                <span class="right-t-2">请输入图书名称</span>
+            </div>
+        </div>
+        <div class="right-t"><a href="" class="weui_btn weui_btn_mini weui_btn_primary">查询</a></div>
+    </div>
+</div>
+<div class="book_list">
+    <ul>
+        <li>
+            <div class="book_left">
+            <img src="https://img3.doubanio.com/lpic/s29276401.jpg" alt=""></div>
+            <div class="book_right">
+                <span>书名:好好学习</span>
+                <span >作者: 成甲</span>
+                <span >出版社:中信出版社</span>
+                <span >定价:42.00</span>
+                <span >ISBN:9787508671581</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="book_left">
+                <img src="https://img3.doubanio.com/lpic/s29276401.jpg" alt=""></div>
+            <div class="book_right">
+                <span>书名:好好学习</span>
+                <span >作者: 成甲</span>
+                <span >出版社:中信出版社</span>
+                <span >定价:42.00</span>
+                <span >ISBN:9787508671581</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="book_left">
+                <img src="https://img3.doubanio.com/lpic/s29276401.jpg" alt=""></div>
+            <div class="book_right">
+                <span>书名:好好学习</span>
+                <span >作者: 成甲</span>
+                <span >出版社:中信出版社</span>
+                <span >定价:42.00</span>
+                <span >ISBN:9787508671581</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="book_left">
+                <img src="https://img3.doubanio.com/lpic/s29276401.jpg" alt=""></div>
+            <div class="book_right">
+                <span>书名:好好学习</span>
+                <span >作者: 成甲</span>
+                <span >出版社:中信出版社</span>
+                <span >定价:42.00</span>
+                <span >ISBN:9787508671581</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="book_left">
+                <img src="https://img3.doubanio.com/lpic/s29276401.jpg" alt=""></div>
+            <div class="book_right">
+                <span>书名:好好学习</span>
+                <span >作者: 成甲</span>
+                <span >出版社:中信出版社</span>
+                <span >定价:42.00</span>
+                <span >ISBN:9787508671581</span>
+
+            </div>
+        </li>
+    </ul>
+</div>
+<include file="Public:footer" />
+</body>
+<script>
+    //顶部搜索框变色
+    $().ready(function(){
+        (function(){
+            pos = 0;
+            ticking = false;
+            var header = document.querySelector(".h-p");
+            window.addEventListener("scroll", function(e){
+                pos = window.scrollY;
+                if(pos > 100&&!ticking){
+                    header.classList.add("scrolledDown");
+                    ticking = true;
+                }
+                if(pos < 100 && ticking){
+                    header.classList.remove("scrolledDown");
+                    ticking = false;
+                }
+            });
+        })();
+    });
+</script>
+</html>
