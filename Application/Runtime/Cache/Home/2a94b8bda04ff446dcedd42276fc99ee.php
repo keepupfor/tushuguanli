@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-iphone-76x76.png" />
     <!-- Retina iPad -->
     <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-152x152.png" />
-    <link rel="stylesheet" type="text/css" href="/tushuguanli/Public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/bookmanage/Public/css/style.css">
     <script type="application/javascript" src="http://wx.365xuet.com/Public/Weui/js/jquery-2.1.4.js"></script>
     <script type="application/javascript" src="http://wx.365xuet.com/Public/Weui/js/jquery-weui.min.js"></script>
 </head>
@@ -102,61 +102,24 @@
 </div>
 <div class="footer">
     <ul>
-        <a href="<?php echo U('Index/index');?>" <?php if($foot == 1): ?>class="on"<?php endif; ?>><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-1-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-1-on.png"><br><span>图书查询</span></li></a>
-        <a onclick="check_login()" <?php if($foot == 2): ?>class="on"<?php endif; ?>><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-2-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-2-on.png"><br><span>图书录入</span></li></a>
-        <a onclick="login()" <?php if($foot == 3): ?>class="on"<?php endif; ?>><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-4-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-4-on.png"><br><span>我的</span></li></a>
+        <a href="<?php echo U('Index/index');?>"><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-1-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-1-on.png"><br><span>图书查询</span></li></a>
+        <a href="<?php echo U('Import/fenlei');?>"><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-2-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-2-on.png"><br><span>图书录入</span></li></a>
+        <a onclick="login()"><li><img src="http://wx.365xuet.com/Public/Weixin/images/footer-4-off.png"><img src="http://wx.365xuet.com/Public/Weixin/images/footer-4-on.png"><br><span>我的</span></li></a>
     </ul>
 </div>
 <script src="http://wx.365xuet.com/Public/Weui/js/jquery.min..js"></script>
-<script src="http://wx.365xuet.com/Public/Weui/js/jquery-weui.js"></script>
 <script>
-    function check_login() {
-        $.post("<?php echo U('Public/is_login');?>",{},function (data) {
-            if (data.status==0 ||data.user.user_type==1){
-              $.confirm("请用管理员账号登录","登录",function () {
-                  login();
-              },function () {
-                  $.toast("取消登录!");
-              })
-            }
-            if (data.status==1 && data.user.user_type==2){
-                window.location.href = "<?php echo U('Import/index');?>"
-            }
-        },"json");
-    }
     function login(){
-        $.login({
-            title: '登录',
-            text: '请输入用户名和密码',
-            onOK: function (username, password) {
-                $.showLoading();
-                setTimeout(function() {
-                    $.hideLoading();
-                    $.post("<?php echo U('Public/login');?>",{username:username,password:password},function (data) {
-                        if (data.status==1){
-                            $.hideLoading();
-                            $.toast("登录成功!",function () {
-                                window.location.href = "<?php echo U('Import/index');?>";
-                            });
-                        }else{
-                            $.hideLoading();
-                            $.toast(data.info,"text");
-                        }
-
-                    },"json");
-                }, 2000);
-            },
-            onCancel: function () {
-                $.toast('取消登录!', 'cancel');
-            }
-        });
+        var url = window.location.href;
+        window.location.href = "/bookmanage/index.php/Public/login?url=" + url;
     }
-//    $(".footer ul a").click(function(){
-//        $(".footer ul a").find("li img:odd").hide();
-//        $(".footer ul a").find("li img:even").show();
-//        $(this).find("img:eq(0)").hide();
-//        $(this).find("img:eq(1)").show();
-//    });
+    $(".footer ul a").click(function(){
+//        alert($(this).siblings().find("img:eq(1)").html());
+        $(".footer ul a").find("li img:odd").hide();
+        $(".footer ul a").find("li img:even").show();
+        $(this).find("img:eq(0)").hide();
+        $(this).find("img:eq(1)").show();
+    });
 </script>
 </body>
 <script>
